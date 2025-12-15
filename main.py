@@ -10,10 +10,10 @@ app = Flask(__name__)
 session = HTTP(
     api_key="Qi3ZcjuY4WnPuqi5rK",
     api_secret="5KpWwkeoYsGp6r17tgBTNFNAcqtEzO8QGG1G",
-    testnet=True
+    testnet=False
 )
 
-DEFAULT_MAX_LOSS = 5  # 預設最大虧損 USDT
+DEFAULT_MAX_LOSS = 1  # 預設最大虧損 USDT
 
 # ✅ 訊號解析函式
 def parse_signal(text):
@@ -98,3 +98,4 @@ def webhook():
 # ✅ 啟動伺服器
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000)
+

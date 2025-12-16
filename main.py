@@ -102,5 +102,12 @@ def webhook():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000)
 
+if __name__ == '__main__':
+    import requests
+    ip = requests.get("https://api.ipify.org").text
+    print(f"🌐 Render 伺服器 IP：{ip}", flush=True)
+
+    app.run(host='0.0.0.0', port=3000)
+
 
 

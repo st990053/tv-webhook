@@ -7,11 +7,14 @@ import os
 app = Flask(__name__)
 
 # ✅ Bybit API 設定
+import os
+
 session = HTTP(
-    api_key="Qi3ZcjuY4WnPuqi5rK",
-    api_secret="5KpWwkeoYsGp6r17tgBTNFNAcqtEzO8QGG1G",
-    testnet=False
+    api_key=os.getenv("BYBIT_API_KEY"),
+    api_secret=os.getenv("BYBIT_API_SECRET"),
+    testnet=False  # ✅ 正式網
 )
+
 
 DEFAULT_MAX_LOSS = 1  # 預設最大虧損 USDT
 
@@ -98,4 +101,5 @@ def webhook():
 # ✅ 啟動伺服器
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000)
+
 
